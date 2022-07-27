@@ -6,9 +6,13 @@ This repository contains data relevant to studies undertaken by the [EMERGENS St
 
 This dataset was inititally curated for our team's 2021 Lancet Public Health [publication](https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(21)00080-3/fulltext), in which we retrospectively validated the use of a statistical regression model for predicting county-level overdose death rates one year into the future.
 
+## Getting Started Right Away
+
+If you would like to start using the data right away, you can download the Unrestricted dataset available at the top-level of this repo! Please read the difference between restricted and unrestricted versions (below) of this dataset before proceding too far along!
+
 ## What is Contained In This Repository
 
-While one option was to simply supply the full dataset, we have opted to provide the raw datasets and the code needed to compile the full dataset. We have done this for transparency, so that research teams may confidently use our dataset and be able to replicate the steps we undertook to compile this data. Within the "Data" folder, there is a directory for each data source, code used to clean these data, and code used to merge the data into a single data set.
+While one option was to simply supply the full dataset, we have opted to provide the raw datasets and the code needed to compile the full dataset. We have done this for transparency, so that research teams may confidently use our dataset and be able to replicate the steps we undertook to compile this data. Within the "Data" folder, there is a directory for each data source, code used to clean these data, and code used to merge the data into a single data set. 
 
 ## Restricted vs. Unrestricted Mortality Data
 
