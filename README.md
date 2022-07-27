@@ -10,6 +10,10 @@ This dataset was inititally curated for our team's 2021 Lancet Public Health [pu
 
 If you would like to start using the data right away, you can download the Unrestricted dataset available at the top-level of this repo! Please read the difference between restricted and unrestricted versions (below) of this dataset before proceding too far along!
 
+## Please Cite Us If You Use This
+
+***[Insert information that the user needs to cite this appropriately, including grant number]***
+
 ## What is Contained In This Repository
 
 While one option was to simply supply the full dataset, we have opted to provide the raw datasets and the code needed to compile the full dataset. We have done this for transparency, so that research teams may confidently use our dataset and be able to replicate the steps we undertook to compile this data. Within the "Data" folder, there is a directory for each data source, code used to clean these data, and code used to merge the data into a single data set. 
