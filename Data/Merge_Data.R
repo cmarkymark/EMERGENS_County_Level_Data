@@ -12,7 +12,7 @@
 ## If you have access to the restricted mortality data, set this to TRUE
 ## Otherwise, set it to FALSE
 
-restricted <- TRUE
+restricted <- FALSE
 
 ## Next, we are going to load each of our datasets we are merging
 ## Data sources include:
@@ -35,7 +35,10 @@ ORx <- read.csv("Opioid Prescribing Data/Opioid_Prescribing_per_100.csv")[,c(3:5
 ## Restricted Mortality Records
 if(restricted){
   overdose <- read.csv(file.choose())[,-c(1)]
-}
+}else{
+  overdose <- read.csv("Unrestricted Mortality/Unrestricted_Mortality_with_Gravity_2010-2020.csv")[,-c(1)]
+  overdose$FIPS <- overdose$County.Code
+  }
 
 ## We need two columns to be consistently named and structured
 ### FIPS (numeric)
@@ -82,9 +85,7 @@ NFLIS <- NFLIS[,colnames(NFLIS) %in% c("State_FIPS", "Year", "Fentanyl_Total")]
 Final_Data <- merge(Final_Data, NFLIS, by = c("State_FIPS", "Year"), all.x = T)
 
 
-## Finally, if we have the restricted data, it will be handled here
 if(restricted){
-  
   ## We are going to remove some of the excess columns
   overdose <- overdose[,!(colnames(overdose) %in% c("county_name","state_abbr",
                            "state_name","state_FIPS",
@@ -92,7 +93,18 @@ if(restricted){
   
   Final_Data <- merge(Final_Data, overdose, by = c("FIPS","Year"), all.x = T)
   
+}else{
+  overdose <- overdose[,!(colnames(overdose) %in% c("Notes","County",
+                                                    "County.Code","Year.Code",
+                                                    "Crude.Rate"))]
+  
+  Final_Data <- merge(Final_Data, overdose, by = c("FIPS","Year"), all.x = T)
 }
 
 ## Now that the final dataset has been generated, we will output it
-write.csv(Final_Data, "County_Level_Data_2010-2020.csv")
+if(restricted){
+  write.csv(Final_Data, "Restricted_County_Level_Data_2010-2020.csv")
+} else{
+  write.csv(Final_Data, "Unrestricted_County_Level_Data_2010-2020.csv")
+}
+
