@@ -21,3 +21,7 @@ While one option was to simply supply the full dataset, we have opted to provide
 ## Restricted vs. Unrestricted Mortality Data
 
 As a human subjects protection, the CDC will not publicly release county-level overdose death counts for counties that experienced less than 10 deaths in a given year. So, we have provided two things. First, we have provided "unrestricted" mortality data, which was requested from the CDC Wonder platform. We have imputed the overdose death count for each county with "suppressed" overdose counts. Second, the restricted mortality data records can be requested from the CDC - instead of county-level estimates, the CDC provides files containing all mortality records for each year. While we cannot make this restricted data public, we have provided R code that can transofrm the individual-level records into county-level annual overdose counts!
+
+## Updating This Repo
+
+Throughout this repo, instructions have been included for how to add additional data to the dataset. This can include either adding new years of data or adding new datasets entirely. In each readme file, you can find instructions for adding additional datasets or additional years of data to existing data sources. This can be useful, as well, if you are forking this dataset and wish to add additional data!
